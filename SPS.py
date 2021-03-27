@@ -9,7 +9,12 @@ def click(event):
     b = (random.choice(choices))
     a = event.widget.cget("text")
     
-    
+    if a==b:
+        newWindow = Toplevel(root)
+        newWindow.title("Result")
+        newWindow.geometry("300x200")
+        newWindow.resizable(0,0)
+        Label(newWindow, text ="Computer selected: {}\nIts a tie :|\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
     if a == 'Stone' and b == 'Paper':
         
         newWindow = Toplevel(root)
@@ -24,20 +29,7 @@ def click(event):
         newWindow.geometry("300x200")
         newWindow.resizable(0,0)
         Label(newWindow, text ="Computer selected: {}\nYou won :)\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
-    if a == 'Stone' and b == 'Stone':
-        
-        newWindow = Toplevel(root)
-        newWindow.title("Result")
-        newWindow.geometry("300x200")
-        newWindow.resizable(0,0)
-        Label(newWindow, text ="Computer selected: {}\nIts a tie :|\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
-    if a == 'Paper' and b == 'Paper':
-       
-        newWindow = Toplevel(root)
-        newWindow.title("Result")
-        newWindow.geometry("300x200")
-        newWindow.resizable(0,0)
-        Label(newWindow, text ="Computer selected: {}\nIts a tie :|\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
+    
     if a == 'Paper' and b == 'Scissor':
         
         newWindow = Toplevel(root)
@@ -66,13 +58,7 @@ def click(event):
         newWindow.geometry("300x200")
         newWindow.resizable(0,0)
         Label(newWindow, text ="Computer selected: {}\nYou lost :(\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
-    if a == 'Scissor' and b == 'Scissor':
-        
-        newWindow = Toplevel(root)
-        newWindow.title("Result")
-        newWindow.geometry("300x200")
-        newWindow.resizable(0,0)
-        Label(newWindow, text ="Computer selected: {}\nIts a tie :|\nTry again".format(b), font="cambria 15 bold").pack(expand=TRUE)
+    
 root = Tk()
 root.geometry("500x300")
 root.title("STONE PAPER SCISSORS")
